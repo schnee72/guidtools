@@ -3,3 +3,13 @@
   width: 295px;
   text-align: center;
 }
+
+.label {
+  background-color: darkolivegreen;
+  color: white;
+  margin-left: 20px;
+}
+
+.labelHidden {
+  display: none;
+}
