@@ -30,9 +30,9 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1 class="heading">Guid Tools</h1>
+        <h1 class="heading">guid tools</h1>
         <div class="buttons">
-        <button onClick={this.generateGuids}>Regenerate</button>
+        <button onClick={this.generateGuids}>regenerate</button>
         <button onClick={this.copyAll}>copy all</button>
         </div>
         {this.state.guidComponents}
