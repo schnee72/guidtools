@@ -1,0 +1,28 @@
+* {
+  font-family: monospace;
+  line-height: 1.5;
+}
+
+body {
+  text-align: center;
+}
+
+.bottom {
+  padding-bottom: 20px;
+}
+
+.left {
+  margin-left: 20px;
+}
+
+.hundred {
+  width: 100px;
+}
+
+.hidden {
+  display: none;
+}
+
+.three-hundred {
+  width: 300px;
+}

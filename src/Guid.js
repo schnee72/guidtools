@@ -1,13 +1,15 @@
-import {h, Component} from 'preact';
-import './Guid.css';
-import {clipy} from './utils.js';
+import { h, Component } from 'preact';
+import { clipy } from './utils.js';
 
 /* eslint-disable no-console */
+
+const COPY = 'copy';
+const COPIED = 'copied!';
 
 export default class Guid extends Component {
   constructor() {
     super();
-    this.state = {copyClass: "labelHidden"};
+    this.state = { copyClass: "labelHidden", buttonText: COPY };
   }
 
   componentWillReceiveProps() {
@@ -16,21 +18,19 @@ export default class Guid extends Component {
 
   copy = () => {
     clipy(this.props.guid);
-    this.setState({copyClass: "label"});
-    setTimeout(() => this.clearCopy(), 1500);
+    this.setState({ buttonText: COPIED });
+    setTimeout(() => this.clearCopy(), 2500);
   };
 
   clearCopy = () => {
-    if (this.state.copyClass !== 'labelHidden')
-      this.setState({copyClass: "labelHidden"});
+    this.setState({ buttonText: COPY });
   };
 
   render() {
     return (
       <div>
         <span class="guid">{this.props.guid}</span>
-        <button onClick={this.copy}>copy</button>
-        <label class={this.state.copyClass} onclick={this.clearCopy}>copied to clipboard!</label>
+        <button class="left hundred" onClick={this.copy}>{this.state.buttonText}</button>
       </div>
     );
   }
