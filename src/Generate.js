@@ -10,7 +10,7 @@ const COPIED = 'copied!';
 export default class Generate extends Component {
   constructor() {
     super();
-    this.state = { guids: [], guidComponents: [], copyButtonText: COPYALL };
+    this.state = { guids: [], guidComponents: [], copyButtonText: COPYALL, guidsClass: '' };
   }
 
   componentDidMount() {
@@ -21,13 +21,13 @@ export default class Generate extends Component {
     this.clearCopyAll();
     this.setState({ guids: generateGuids() });
     let guids = [];
-    for (let i = 0; i < this.state.guids.length; i++)
-      guids.push(<Guid guid={this.state.guids[i]} />);
-    this.setState({ guidComponents: guids });
+    for (let guid of this.state.guids)
+      guids.push(<Guid guid={guid} />);
+    this.setState({ guidComponents: guids, guidsClass: '' });
   };
 
   copyAll = () => {
-    this.setState({ guids: this.state.guidComponents.map((g) => { return g.attributes.guid; }), copyButtonText: COPIED });
+    this.setState({ guids: this.state.guidComponents.map((g) => { return g.attributes.guid; }), copyButtonText: COPIED, guidsClass: 'red' });
     clipy(this.state.guids.join('\n'));
     setTimeout(() => this.clearCopyAll(), 2500);
   };
@@ -46,7 +46,9 @@ export default class Generate extends Component {
           <button class="hundred" onClick={this.buildGuids}>refresh</button>
           <button class="hundred" onClick={this.copyAll}>{this.state.copyButtonText}</button>
         </div>
-        {this.state.guidComponents}
+        <div class={this.state.guidsClass}>
+          {this.state.guidComponents}
+        </div>
       </div>
     );
   }
