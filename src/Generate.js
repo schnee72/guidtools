@@ -21,20 +21,34 @@ export default class Generate extends Component {
   }
 
   componentDidMount() {
-    this.buildGuids();
+    this.buildGuids(true);
   }
 
-  buildGuids = () => {
+  buildGuids = (getNewGuids) => {
     this.clearCopyAll();
-    this.setState({ guids: generateGuids() });
+    if (getNewGuids)
+      this.setState({ guids: generateGuids() });
     let guids = [];
-    for (let guid of this.state.guids)
-      guids.push(<Guid guid={guid} />);
+    for (let guid of this.state.guids) {
+      guids.push(<Guid guid={this.setGuid(guid)} />);
+    }
     this.setState({ guidComponents: guids, guidsClass: '' });
   };
 
+  setGuid = (guid) => {
+    if (this.state.singleChecked)
+      guid = `'${guid}'`;
+    else if (this.state.doubleChecked)
+      guid = `"${guid}"`;
+    return guid;
+  }
+
   copyAll = () => {
-    this.setState({ guids: this.state.guidComponents.map((g) => { return g.attributes.guid; }), copyButtonText: COPIED, guidsClass: 'red' });
+    this.setState({
+      guids: this.state.guidComponents.map((g) => { return g.attributes.guid; }),
+      copyButtonText: COPIED,
+      guidsClass: 'red'
+    });
     clipy(this.state.guids.join('\n'));
     setTimeout(() => this.clearCopyAll(), 2500);
   };
@@ -48,16 +62,19 @@ export default class Generate extends Component {
       this.setState({ doubleChecked: false });
     }
     this.setState({ singleChecked: !this.state.singleChecked });
-    if (this.state.singleChecked) {
-      //let guids = [];
-      for (let guid of this.state.guids)
-        console.log(guid);
-        //TODO
-    }
+    this.buildGuids(false);
   }
 
   doubleClick = () => {
-    console.log('double');
+    if (this.state.singleChecked) {
+      this.setState({ singleChecked: false });
+    }
+    this.setState({ doubleChecked: !this.state.doubleChecked });
+    this.buildGuids(false);
+  }
+
+  handleBuild = () => {
+    this.buildGuids(true);
   }
 
   render() {
@@ -67,7 +84,8 @@ export default class Generate extends Component {
         <div class="bottom">
           <input type="checkbox" id="single" onclick={this.singleClick} checked={this.state.singleChecked} /><label for="single">single</label>
           <input type="checkbox" id="double" onclick={this.doubleClick} checked={this.state.doubleChecked} /><label for="double">double</label>
-          <button class="hundred" onClick={this.buildGuids}>refresh</button>
+          &nbsp;
+          <button class="hundred" onClick={this.handleBuild}>refresh</button>
           <button class="hundred" onClick={this.copyAll}>{this.state.copyButtonText}</button>
         </div>
         <div class={this.state.guidsClass}>
