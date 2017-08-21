@@ -10,7 +10,14 @@ const COPIED = 'copied!';
 export default class Generate extends Component {
   constructor() {
     super();
-    this.state = { guids: [], guidComponents: [], copyButtonText: COPYALL, guidsClass: '' };
+    this.state = {
+      guids: [],
+      guidComponents: [],
+      copyButtonText: COPYALL,
+      guidsClass: '',
+      singleChecked: false,
+      doubleChecked: false
+    };
   }
 
   componentDidMount() {
@@ -36,13 +43,30 @@ export default class Generate extends Component {
     this.setState({ copyButtonText: COPYALL });
   }
 
+  singleClick = () => {
+    if (this.state.doubleChecked) {
+      this.setState({ doubleChecked: false });
+    }
+    this.setState({ singleChecked: !this.state.singleChecked });
+    if (this.state.singleChecked) {
+      //let guids = [];
+      for (let guid of this.state.guids)
+        console.log(guid);
+        //TODO
+    }
+  }
+
+  doubleClick = () => {
+    console.log('double');
+  }
+
   render() {
     return (
       <div>
         <h2>generate</h2>
         <div class="bottom">
-          <input type="checkbox" id="single" /><label for="single">single</label>
-          <input type="checkbox" id="double" /><label for="double">double</label>
+          <input type="checkbox" id="single" onclick={this.singleClick} checked={this.state.singleChecked} /><label for="single">single</label>
+          <input type="checkbox" id="double" onclick={this.doubleClick} checked={this.state.doubleChecked} /><label for="double">double</label>
           <button class="hundred" onClick={this.buildGuids}>refresh</button>
           <button class="hundred" onClick={this.copyAll}>{this.state.copyButtonText}</button>
         </div>
