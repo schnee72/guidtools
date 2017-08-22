@@ -2,8 +2,6 @@ import { h, Component } from 'preact';
 import Guid from './Guid';
 import { clipy, generateGuids } from './utils';
 
-/* eslint-disable no-console */
-
 const COPYALL = 'copy-all';
 const COPIED = 'copied!';
 
@@ -82,8 +80,10 @@ export default class Generate extends Component {
       <div>
         <h2>generate</h2>
         <div class="bottom">
-          <input type="checkbox" id="single" onclick={this.singleClick} checked={this.state.singleChecked} /><label for="single">single</label>
-          <input type="checkbox" id="double" onclick={this.doubleClick} checked={this.state.doubleChecked} /><label for="double">double</label>
+          <input type="checkbox" id="single" onclick={this.singleClick} checked={this.state.singleChecked} />
+          <label for="single">single</label>
+          <input type="checkbox" id="double" onclick={this.doubleClick} checked={this.state.doubleChecked} />
+          <label for="double">double</label>
           &nbsp;
           <button class="hundred" onClick={this.handleBuild}>refresh</button>
           <button class="hundred" onClick={this.copyAll}>{this.state.copyButtonText}</button>
