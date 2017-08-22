@@ -78,15 +78,28 @@ export default class Generate extends Component {
   render() {
     return (
       <div>
-        <h2>generate</h2>
+        <h2 title="generate 10 guids at a time">generate</h2>
         <div class="bottom">
-          <input type="checkbox" id="single" onclick={this.singleClick} checked={this.state.singleChecked} />
+          <input
+            type="checkbox"
+            id="single"
+            onclick={this.singleClick}
+            checked={this.state.singleChecked} />
           <label for="single">single</label>
-          <input type="checkbox" id="double" onclick={this.doubleClick} checked={this.state.doubleChecked} />
+          <input
+            type="checkbox"
+            id="double"
+            onclick={this.doubleClick}
+            checked={this.state.doubleChecked} />
           <label for="double">double</label>
           &nbsp;
-          <button class="hundred" onClick={this.handleBuild}>refresh</button>
-          <button class="hundred" onClick={this.copyAll}>{this.state.copyButtonText}</button>
+          <button
+            class="hundred"
+            onClick={this.handleBuild}
+            title="generate 10 more guids">refresh</button>
+          <button
+            class="hundred"
+            onClick={this.copyAll}>{this.state.copyButtonText}</button>
         </div>
         <div class={this.state.guidsClass}>
           {this.state.guidComponents}
