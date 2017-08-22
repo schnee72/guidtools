@@ -1,8 +1,6 @@
 import { h, Component } from 'preact';
 import { clipy } from './utils.js';
 
-/* eslint-disable no-console */
-
 const COPY = 'copy';
 const COPIED = 'copied!';
 
@@ -32,7 +30,9 @@ export default class Guid extends Component {
     return (
       <div>
         <span class={this.state.guidClass}>{this.props.guid}</span>
-        <button class="left hundred" onClick={this.copy}>{this.state.buttonText}</button>
+        <button
+          class="left hundred"
+          onClick={this.copy}>{this.state.buttonText}</button>
       </div>
     );
   }

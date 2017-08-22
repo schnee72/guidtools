@@ -78,7 +78,7 @@ export default class Generate extends Component {
   render() {
     return (
       <div>
-        <h2 title="generate 10 guids at a time">generate</h2>
+        <h2>generate</h2>
         <div class="bottom">
           <input
             type="checkbox"
@@ -95,8 +95,7 @@ export default class Generate extends Component {
           &nbsp;
           <button
             class="hundred"
-            onClick={this.handleBuild}
-            title="generate 10 more guids">refresh</button>
+            onClick={this.handleBuild}>refresh</button>
           <button
             class="hundred"
             onClick={this.copyAll}>{this.state.copyButtonText}</button>

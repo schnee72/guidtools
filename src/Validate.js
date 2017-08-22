@@ -52,11 +52,11 @@ export default class Validate extends Component {
   render() {
     return (
       <div>
-        <h2 title="validate a guid">validate</h2>
+        <h2>validate</h2>
         <input
           ref={ti => { this.textInput = ti; }}
           value={this.state.value}
-          class="two-seventy-five"
+          class="threehundred"
           onChange={this.handleChange}
           onKeyDown={this.handleKeyDown}
           onFocus={this.handleFocus} />
