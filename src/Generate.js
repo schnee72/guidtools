@@ -101,7 +101,9 @@ export default class Generate extends Component {
             onClick={this.copyAll}>{this.state.copyButtonText}</button>
         </div>
         <div class={this.state.guidsClass}>
+          <table class="center-table">
           {this.state.guidComponents}
+          </table>
         </div>
       </div>
     );

@@ -28,12 +28,20 @@ export default class Guid extends Component {
 
   render() {
     return (
-      <div>
-        <span class={this.state.guidClass}>{this.props.guid}</span>
-        <button
-          class="left hundred"
-          onClick={this.copy}>{this.state.buttonText}</button>
-      </div>
+      <tr>
+        <td>
+          <div class="twoseventyfive">
+            <span class={this.state.guidClass}>{this.props.guid}</span>
+          </div>
+        </td>
+        <td>
+          <div class="hundred">
+            <button
+              class="left hundred"
+              onClick={this.copy}>{this.state.buttonText}</button>
+          </div>
+        </td>
+      </tr>
     );
   }
 }
