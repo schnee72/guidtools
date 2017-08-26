@@ -79,7 +79,7 @@ export default class Generate extends Component {
     return (
       <div>
         <h2>generate</h2>
-        <div class="bottom">
+        <div class="bottom left">
           <input
             type="checkbox"
             id="single"
@@ -92,7 +92,7 @@ export default class Generate extends Component {
             onclick={this.doubleClick}
             checked={this.state.doubleChecked} />
           <label for="double">double</label>
-          <div class="five"/>
+          <div class="twentyfive"/>
           <button
             class="hundred"
             onClick={this.handleBuild}>refresh</button>

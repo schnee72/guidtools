@@ -9,6 +9,9 @@ export default class App extends Component {
         <h1>guids</h1>
         <Generate />
         <Validate />
+        <div class="float-left">
+          <a href="https://github.com/schnee72/guidtools">github</a>
+        </div>
       </div>
     );
   }

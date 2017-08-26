@@ -33,17 +33,13 @@ export default class Guid extends Component {
   render() {
     return (
       <tr>
-        <td>
-          <div class="twoseventyfive">
-            <span class={this.state.guidClass}>{this.props.guid}</span>
-          </div>
+        <td class="threefifty">
+          <span class={this.state.guidClass}>{this.props.guid}</span>
         </td>
         <td>
-          <div class="hundred">
-            <button
-              class="left hundred"
-              onClick={this.copy}>{this.state.buttonText}</button>
-          </div>
+          <button
+            class="seventyfive"
+            onClick={this.copy}>{this.state.buttonText}</button>
         </td>
       </tr>
     );

@@ -1,6 +1,6 @@
 * {
   font-family: monospace;
-  line-height: 1.5;
+  line-height: 1.25;
 }
 
 body {
@@ -9,12 +9,20 @@ body {
   margin-right: auto;
 }
 
+a {
+  color: inherit;
+}
+
+a:link {
+  text-decoration: none;
+}
+
 .bottom {
   padding-bottom: 20px;
 }
 
 .left {
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 .hundred {
@@ -23,9 +31,13 @@ body {
   min-width: 100px;
 }
 
-.five {
+.twentyfive {
   width: 25px;
   display: inline-block;
+}
+
+.top-left {
+  float: left;
 }
 
 .hidden {
@@ -38,10 +50,16 @@ body {
   min-width: 300px;
 }
 
-.twoseventyfive {
-  width: 275px;
-  max-width: 275px;
-  min-width: 275px;
+.threefifty {
+  width: 350px;
+  max-width: 350px;
+  min-width: 350px;
+}
+
+.seventyfive {
+  width: 75px;
+  max-width: 75px;
+  min-width: 75px;
 }
 
 .red {

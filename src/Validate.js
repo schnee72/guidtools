@@ -51,18 +51,20 @@ export default class Validate extends Component {
 
   render() {
     return (
-      <div>
+      <div class="bottom">
         <h2>validate</h2>
-        <input
-          ref={ti => { this.textInput = ti; }}
-          value={this.state.value}
-          class="threehundred"
-          onChange={this.handleChange}
-          onKeyDown={this.handleKeyDown}
-          onFocus={this.handleFocus} />
-        <button onclick={this.validateGuid}>check</button>
-        <button onclick={this.clear}>clear</button>
-        <div><label class={this.state.labelClass}>{this.state.labelText}</label></div>
+        <div class="left">
+          <input
+            ref={ti => { this.textInput = ti; }}
+            value={this.state.value}
+            class="threehundred"
+            onChange={this.handleChange}
+            onKeyDown={this.handleKeyDown}
+            onFocus={this.handleFocus} />
+          <button onclick={this.validateGuid}>check</button>
+          <button onclick={this.clear}>clear</button>
+          <div><label class={this.state.labelClass}>{this.state.labelText}</label></div>
+        </div>
       </div>
     );
   }
