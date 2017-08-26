@@ -7,12 +7,16 @@ const COPIED = 'copied!';
 export default class Guid extends Component {
   constructor() {
     super();
-    this.state = { copyClass: "labelHidden", buttonText: COPY, guidClass: '' };
+    this.state = {
+      copyClass: "labelHidden",
+      buttonText: COPY,
+      guidClass: ''
+    };
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.guid !== this.props.guid)
-      this.setState({guidClass: ''});
+      this.setState({ guidClass: '' });
     this.clearCopy();
   }
 

@@ -39,7 +39,7 @@ export default {
       inject: true
     }),
     // Minify JS
-    new webpack.optimize.UglifyJsPlugin({sourceMap: true}),
+    new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
     new webpack.LoaderOptionsPlugin({
       debug: false,
       noInfo: true,
@@ -48,10 +48,10 @@ export default {
   ],
   module: {
     loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
-      {test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader?sourceMap')},
-      {test: /\.ico$/, loader: 'file-loader?name=[name].[ext]'},
-      {test: /\.(jpe?g|png|gif)$/i, loader: 'file-loader?name=[name].[ext]'}
+      { test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader'] },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader?sourceMap') },
+      { test: /\.ico$/, loader: 'file-loader?name=[name].[ext]' },
+      { test: /\.(jpe?g|png|gif)$/i, loader: 'file-loader?name=[name].[ext]' }
     ]
   }
 };
