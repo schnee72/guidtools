@@ -23,6 +23,11 @@ body {
   min-width: 100px;
 }
 
+.five {
+  width: 25px;
+  display: inline-block;
+}
+
 .hidden {
   display: none;
 }

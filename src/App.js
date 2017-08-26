@@ -6,7 +6,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>guid tools</h1>
+        <h1>guids</h1>
         <Generate />
         <Validate />
       </div>
