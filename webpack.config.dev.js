@@ -16,7 +16,6 @@ export default {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    // Create HTML file that includes reference to bundled JS
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       favicon: 'src/favicon.ico',

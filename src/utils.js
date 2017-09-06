@@ -11,7 +11,7 @@ export const clipy = (val) => {
 
 export const generateGuids = () => {
   let guids = [];
-  for (let i=0; i<10; i++)
+  for (let i = 0; i < 10; i++)
     guids.push(uuidv4());
   return guids;
 };

@@ -1,10 +1,15 @@
 {
   "presets": [
-    "latest",
+    "env",
     "stage-1",
     "react"
   ],
   "plugins": [
-    ["transform-react-jsx", {"pragma": "h"}]
+    [
+      "transform-react-jsx",
+      {
+        "pragma": "h"
+      }
+    ]
   ]
 }

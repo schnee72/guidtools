@@ -92,7 +92,7 @@ export default class Generate extends Component {
             onclick={this.doubleClick}
             checked={this.state.doubleChecked} />
           <label for="double">double</label>
-          <div class="twentyfive"/>
+          <div class="twentyfive" />
           <button
             class="hundred"
             onClick={this.handleBuild}>refresh</button>
@@ -102,7 +102,7 @@ export default class Generate extends Component {
         </div>
         <div class={this.state.guidsClass}>
           <table class="center-table">
-          {this.state.guidComponents}
+            {this.state.guidComponents}
           </table>
         </div>
       </div>
