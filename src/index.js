@@ -58,14 +58,14 @@ class App extends Component {
         <h2>generate</h2>
         {this.state.guids}
         <br/>
-        <button onclick={this.handleGuids}>refresh</button>
-        {' '}<label for='single'>single</label>
+        <button onclick={this.handleGuids}>reload</button>
+        {' '}<label for='single'>'</label>
           <input id='single' type='checkbox' checked={this.state.singleChecked} onchange={this.handleSingle}/>
-        {' '}<label for='double'>double</label>
+        {' '}<label for='double'>"</label>
           <input id='double' type='checkbox' checked={this.state.doubleChecked} onchange={this.handleDouble} />
         <h2>validate</h2>
         <Validate />
-        <a href="https://github.com/schnee72/guidtools">github</a>
+        <a href="https://github.com/schnee72/guidtools">source</a>
       </div>
     );
   }
