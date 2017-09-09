@@ -20,7 +20,7 @@ export default class Validate extends Component {
   handleKeyDown = e => {
     if (e.key === 'Enter') {
       this.setState({ label: '' });
-      this.setState({ value: this.textInput.value });
+      this.setState({ value: e.target.value });
       this.check();
       e.preventDefault();
     } else if (this.state.label !== '') {
@@ -30,7 +30,7 @@ export default class Validate extends Component {
 
   handleChange = e => this.setState({value: e.target.value});
 
-  handleFocus = () => this.textInput.select();
+  handleClick = e => e.target.setSelectionRange(0, e.target.value.length);
 
   render() {
     return (
@@ -39,8 +39,8 @@ export default class Validate extends Component {
           class='validateBox'
           onkeydown={this.handleKeyDown}
           onchange={this.handleChange}
-          onfocus={this.handleFocus}
-          ref={input => { this.textInput = input; }} />
+          onclick={this.handleClick}
+          onblur={this.check} />
         <h3 class={this.state.lClass}>{this.state.label}</h3>
       </div>
     );
