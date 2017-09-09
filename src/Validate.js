@@ -1,70 +1,47 @@
 import { h, Component } from 'preact';
 
-const NOT = 'not a guid';
-const IS = 'is a guid';
-
 export default class Validate extends Component {
-  constructor() {
-    super();
-    this.state = { labelText: '', labelClass: 'hidden', value: '' };
+  constructor(props) {
+    super(props);
+    this.state = {value: '', label: ''};
   }
 
-  validateGuid = () => {
+  check = () => {
     if (this.state.value.length > 0) {
       this.setState({ labelClass: '' });
       var pattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
       if (pattern.test(this.state.value))
-        this.setState({ labelText: IS });
+        this.setState({ label: 'is a guid' });
       else
-        this.setState({ labelText: NOT });
+        this.setState({ label: "not a guid" });
     }
-  }
+  };
 
-  handleChange = (e) => {
-    this.setState({ value: e.target.value });
-  }
-
-  clear = () => {
-    this.hideLabel();
-    this.setState({ value: '' });
-    this.textInput.value = '';
-  }
-
-  handleKeyDown = (e) => {
+  handleKeyDown = e => {
     if (e.key === 'Enter') {
-      this.hideLabel();
+      this.setState({ label: '' });
       this.setState({ value: this.textInput.value });
-      this.validateGuid();
+      this.check();
       e.preventDefault();
-    } else if (this.state.labelClass !== 'hidden') {
-      this.hideLabel();
+    } else if (this.state.label !== '') {
+      this.setState({label: ''});
     }
-  }
+  };
 
-  handleFocus = () => {
-    this.textInput.select();
-  }
+  handleChange = e => this.setState({value: e.target.value});
 
-  hideLabel = () => {
-    this.setState({ labelClass: 'hidden' });
-  }
+  handleFocus = () => this.textInput.select();
 
   render() {
     return (
-      <div class="bottom">
-        <h2>validate</h2>
-        <div class="left">
-          <input
-            ref={ti => { this.textInput = ti; }}
-            value={this.state.value}
-            class="threehundred"
-            onChange={this.handleChange}
-            onKeyDown={this.handleKeyDown}
-            onFocus={this.handleFocus} />
-          <button onclick={this.validateGuid}>check</button>
-          <button onclick={this.clear}>clear</button>
-          <div><label class={this.state.labelClass}>{this.state.labelText}</label></div>
-        </div>
+      <div>
+        <input
+          class='validateBox'
+          onkeydown={this.handleKeyDown}
+          onchange={this.handleChange}
+          onfocus={this.handleFocus}
+          ref={input => { this.textInput = input; }} />
+        <h3>{this.state.label}</h3>
       </div>
     );
   }

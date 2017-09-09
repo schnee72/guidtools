@@ -1,6 +1,7 @@
 * {
   font-family: monospace;
   line-height: 1.25;
+  padding-right: 5px;
 }
 
 body {
@@ -17,56 +18,11 @@ a:link {
   text-decoration: none;
 }
 
-.bottom {
-  padding-bottom: 20px;
-}
-
-.left {
-  margin-left: 25px;
-}
-
-.hundred {
-  width: 100px;
-  max-width: 100px;
-  min-width: 100px;
-}
-
-.twentyfive {
-  width: 25px;
-  display: inline-block;
-}
-
-.top-left {
-  float: left;
-}
-
-.hidden {
-  display: none;
-}
-
-.threehundred {
-  width: 300x;
-  max-width: 300px;
-  min-width: 300px;
-}
-
-.threefifty {
-  width: 350px;
-  max-width: 350px;
-  min-width: 350px;
-}
-
-.seventyfive {
-  width: 75px;
-  max-width: 75px;
-  min-width: 75px;
-}
-
 .red {
   color: red;
 }
 
-.center-table {
-  margin-left: auto;
-  margin-right: auto;
+.validateBox {
+  width: 275px;
+  text-align: center;
 }

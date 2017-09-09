@@ -1,7 +1,6 @@
 {
   "presets": [
     "env",
-    "stage-1",
     "react"
   ],
   "plugins": [
@@ -10,6 +9,7 @@
       {
         "pragma": "h"
       }
-    ]
+    ],
+    "transform-class-properties"
   ]
 }
