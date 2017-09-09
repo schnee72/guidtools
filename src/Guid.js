@@ -13,7 +13,7 @@ export default class Guid extends Component {
 
   handleClick = () => {
     this.clipy(this.props.guid);
-    this.setState({guidClass: 'red'});
+    this.setState({guidClass: 'orange'});
   };
 
   clipy = val => {

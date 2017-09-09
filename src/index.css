@@ -8,6 +8,19 @@ body {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  background: #000000;
+  color: #eeeeee;
+}
+
+input {
+  border-style: none;
+}
+
+button {
+  background: #444444;
+  color: #eeeeee;
+  border-style: solid;
+  border-color: #444444;
 }
 
 a {
@@ -19,10 +32,19 @@ a:link {
 }
 
 .red {
-  color: red;
+  color: #ee0000;
+}
+
+.orange {
+  color: #ffa500;
+}
+
+.green {
+  color: #00ff00;
 }
 
 .validateBox {
   width: 275px;
   text-align: center;
+  background: #eeeeee
 }
