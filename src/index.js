@@ -10,7 +10,8 @@ class App extends Component {
     this.state = {
       guids: [],
       singleChecked: true,
-      doubleChecked: false
+      doubleChecked: false,
+      capsChecked: true
     };
   }
 
@@ -19,8 +20,14 @@ class App extends Component {
   }
 
   buildGuids = q => {
-    this.setState({ guids: [...Array(10)].map((x, i) => <Guid key={i} guid={`${q+uuidv4()+q}`} />)});
+    this.setState({ guids:
+      [...Array(10)].map((x, i) =>
+        <Guid key={i} guid={`${q+this.formatGuids()+q}`} />)});
   };
+
+  formatGuids = () => {
+    return this.state.capsChecked ? uuidv4().toUpperCase() : uuidv4();
+  }
 
   handleGuids = () => {
     let quotes = '';
@@ -51,6 +58,16 @@ class App extends Component {
     this.buildGuids(quotes);
   }
 
+  handleCaps = e => {
+    let quotes = '';
+    this.setState({ capsChecked: e.target.checked });
+    if (this.state.singleChecked)
+      quotes = '\'';
+    else if (this.state.doubleChecked)
+      quotes = '"';
+    this.buildGuids(quotes);
+  }
+
   render() {
     return (
       <div>
@@ -63,6 +80,8 @@ class App extends Component {
           <input id='single' type='checkbox' checked={this.state.singleChecked} onchange={this.handleSingle}/>
         {' '}<label for='double'>"</label>
           <input id='double' type='checkbox' checked={this.state.doubleChecked} onchange={this.handleDouble} />
+        {' '}<label for='caps'>Caps</label>
+          <input id='caps' type='checkbox' checked={this.state.capsChecked} onchange={this.handleCaps} />
         <h2>validate</h2>
         <Validate />
         <a href="https://github.com/schnee72/guidtools">source</a>
