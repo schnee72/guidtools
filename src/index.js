@@ -84,6 +84,8 @@ class App extends Component {
           <input id='caps' type='checkbox' checked={this.state.capsChecked} onchange={this.handleCaps} />
         <h2>validate</h2>
         <Validate />
+        <div>tweet-a-guid</div>
+        <br/>
         <a href="https://github.com/schnee72/guidtools">source</a>
       </div>
     );
