@@ -20,8 +20,7 @@
   "author": "dustin schnee",
   "license": "MIT",
   "dependencies": {
-    "preact": "^10.4.7",
-    "uuid": "^8.3.0"
+    "preact": "^10.4.7"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -48,6 +47,7 @@
     "path": "^0.12.7",
     "rimraf": "^2.6.1",
     "style-loader": "^0.23.1",
+    "uuid": "^8.3.2",
     "webpack": "^3.5.5",
     "webpack-dev-middleware": "^2.0.3",
     "webpack-hot-middleware": "^2.18.2",
