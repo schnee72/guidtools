@@ -91,7 +91,6 @@ class App extends Component {
         <input name='dash' type='checkbox' checked={this.state.dashChecked} onChange={this.handleDash} />
         <h2>validate</h2>
         <Validate />
-        <div>tweet-a-guid</div>
         <br />
         <a href="https://github.com/schnee72/guidtools">source</a>
       </div>
