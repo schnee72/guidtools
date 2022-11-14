@@ -41,7 +41,7 @@
     "express": "^4.15.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^2.0.0",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "npm-run-all": "^4.0.2",
     "open": "7.2.0",
     "path": "^0.12.7",
